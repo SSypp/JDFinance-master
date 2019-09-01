@@ -1,0 +1,31 @@
+<template>
+    <div :class="[panelClass,cname]">
+        <h1>-{{title}}-</h1>
+        <slot/>
+    </div>
+</template>
+<script>
+export default {
+    props:{
+        cname:{
+            type:String,
+            default:''
+        },
+        title:{
+            type:String,
+            default:''
+        }
+    },
+    data() {
+        return {
+            panelClass:'panel'
+        }
+    },
+}
+</script>
+<style lang="scss">
+    @import './../../css/element.scss';
+    .panel{
+        @include panel;
+    }
+</style>
